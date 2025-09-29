@@ -2,9 +2,7 @@
 #define LCDSPI_H
 #include <hardware/spi.h>
 
-// #define LCD_SPI_SPEED   6000000
-// #define LCD_SPI_SPEED   25000000
-#define LCD_SPI_SPEED 50000000
+#define LCD_SPI_SPEED (80 * 1000 * 1000)
 
 #define BYTES_PER_PIXEL 2
 
@@ -62,6 +60,7 @@
 
 void draw_rect_spi(int x1, int y1, int x2, int y2, int c);
 void draw_line_spi(int x1, int y1, int x2, int y2, int color);
+void draw_pixel(int x, int y, int c);
 
 void lcd_print_string_color(char *s, int fg, int bg);
 void draw_battery_icon(int x0, int y0, int level);
